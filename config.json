@@ -1,0 +1,14 @@
+{
+    "Pizzaslice" :
+    {
+	"Database" :
+   	{
+            "host" : "localhost",
+       	    "user" : "root",
+	    "password" : "kefas123",
+	    "db" : "pizzaslice_test",
+	    "port" : 3306
+    	}
+    }	
+}	
+	
