@@ -29,7 +29,7 @@ public:
 
 private:
     boost::property_tree::ptree   _config;
-    MYSQL *_mysql = mysql_init(NULL);  
+    MYSQL *_mysql;
 
 };
     

@@ -8,17 +8,17 @@ namespace PizzaSlice { namespace Database
 
         mysql_options(_mysql, MYSQL_OPT_RECONNECT, (void *)"1");
         
-        std::string host = _config.get<std::string>("Pizzaslice.Database.host");
-        std::string user = _config.get<std::string>("Pizzaslice.Database.user");
-        std::string password = _config.get<std::string>("Pizzaslice.Database.password");
-        std::string db = _config.get<std::string>("Pizzaslice.Database.db");
+        std::string host = _config.get<std::string>("PizzaSlice.Database.host");
+        std::string user = _config.get<std::string>("PizzaSlice.Database.user");
+        std::string password = _config.get<std::string>("PizzaSlice.Database.password");
+        std::string db = _config.get<std::string>("PizzaSlice.Database.db");
 
         if(mysql_real_connect(_mysql,
                               host.c_str(),
                               user.c_str(),
                               password.c_str(),
                               db.c_str(),
-                              _config.get<unsigned>("Pizzaslice.Database.port"),
+                              _config.get<unsigned>("PizzaSlice.Database.port"),
                               NULL,
                               0) == NULL)
         {
