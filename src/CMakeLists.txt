@@ -4,6 +4,7 @@ set(PizzaSlice_SRCS CommandLinePizzaSlice.cpp)
 
 add_executable(pizzaslice ${PizzaSlice_SRCS} )
 
-target_link_libraries(pizzaslice
-Database
-)
+target_link_libraries(
+pizzaslice
+Database 
+Utils ${Boost_LIBRARIES} ${MARIADB_LIBRARIES})

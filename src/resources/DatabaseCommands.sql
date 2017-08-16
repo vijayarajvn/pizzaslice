@@ -14,7 +14,7 @@
 DROP TABLE IF EXISTS `member`;
         
 CREATE TABLE `member` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`)
 );
@@ -27,8 +27,8 @@ CREATE TABLE `member` (
 DROP TABLE IF EXISTS `expense`;
         
 CREATE TABLE `expense` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `type` ENUM NOT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `type` ENUM ('veg', 'non_veg') NOT NULL,
   `date` DATETIME NOT NULL,
   `expense` DOUBLE NOT NULL,
   `description` MEDIUMINT NOT NULL,
@@ -43,11 +43,11 @@ CREATE TABLE `expense` (
 DROP TABLE IF EXISTS `daily_records`;
         
 CREATE TABLE `daily_records` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
   `date` DATETIME NOT NULL,
   `member_id` INTEGER NOT NULL,
-  `session` ENUM NOT NULL,
-  `category` ENUM NOT NULL,
+  `session` ENUM ('break_fast', 'lunch', 'dinner') NOT NULL,
+  `category` ENUM ('veg', 'non_veg') NOT NULL,
   PRIMARY KEY (`id`)
 );
 
