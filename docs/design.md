@@ -106,3 +106,24 @@ current daily record of member is as `vvn`. He wants to change it to
 4 vvne
 2 vv0  - to clear dinner session - he later find out that 2nd member hasn't eaten and manager has mistakely entered wrong value.
 ```
+
+## How to calculate monthly expense for member?
+If a member eat for a session we will be definitely charged for veg
+food costs.  If a session qualifer a user is `n` it just means that he
+as eaten non-veg in addition to veg food. We calculate 3 types of
+expenses of a member monthly. 
+
+1. veg-expense 
+2. non-veg-expense.
+3. misc expenese (like eating egg).
+
+### Calculate veg-expense
+We check the `expense` table to find the net-veg-expenses for a
+month. Later we find the session-count of all members using
+`daily_records` table as `net-session-count`. Find member's individual
+session count as session-count.
+
+``` 
+member-monthly-veg-expense = (session-count/net-session-count) * (session-count)
+```
+
