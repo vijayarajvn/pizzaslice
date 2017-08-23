@@ -23,7 +23,6 @@ User will be presented with a menu of following format.
     1. Change mess manager
     2. Expenses
     3. Daily Records
-    4. List Daily Records
     5. List Record by Date
 ```
 
@@ -127,3 +126,27 @@ session count as `session-count`.
 member-monthly-veg-expense = (session-count/net-session-count) * (net-veg-expenses)
 ```
 
+### Calculate non-veg expense(excluding eggs)
+We check the `expense` table to find the `expense` on `type` non-veg as
+`non-veg-sessional-expense`.
+Then we check the `daily_records` table to find the number of members with
+`n` for the session as `non-veg-count`.
+
+```
+member-sessional-non-veg-expense = non-veg-sessional-expense/non-veg-count
+member-monthly-non-veg-expense = sum of all member-sessional-non-veg-expense
+```
+
+### Calculate misc expenses
+It includes various expenses such as egg expenses and expenses from miscallaneous things
+such as broomstick, dish-wash bar, utensils etc.
+We check `daily_records` table to find the number of eggs had by members by counting `e`
+per menber as `member-egg-count` and total `e` as `total-egg-count`. We also check
+`expense` table for getting the total egg expenses as `monthly-egg-expenses` from `description` egg.
+ Other misc expenses can be obtained from taking sum of records from `expense` table by description misc
+as 'monthly-misc-expenses'.
+
+```
+member-monthly-egg-expense = (member-egg-cont/total-egg-count) * monthly-egg-expenses
+member-monthly-misc-expenses = monthly-misc-expenses/number-of-members
+```
