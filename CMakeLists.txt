@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 project (PizzaSlice)
 
 if (UNIX)
-SET(CMAKE_CXX_FLAGS "-std=c++0x -pthread -lboost_system -lmysqlclient")
+SET(CMAKE_CXX_FLAGS "-std=c++0x -pthread -lboost_system -lmariadbclient")
 set(MY_LINK_FLAGS  " -ldl -lz -lssl -lcrypto")
 endif (UNIX)
 
