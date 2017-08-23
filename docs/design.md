@@ -118,12 +118,12 @@ expenses of a member monthly.
 3. misc expenese (like eating egg).
 
 ### Calculate veg-expense
-We check the `expense` table to find the net-veg-expenses for a
+We check the `expense` table to find the `net-veg-expenses` for a
 month. Later we find the session-count of all members using
 `daily_records` table as `net-session-count`. Find member's individual
-session count as session-count.
+session count as `session-count`.
 
 ``` 
-member-monthly-veg-expense = (session-count/net-session-count) * (session-count)
+member-monthly-veg-expense = (session-count/net-session-count) * (net-veg-expenses)
 ```
 
