@@ -13,6 +13,9 @@ find_path(MARIADB_INCLUDE_DIR mysql.h
           /usr/local/include/mysql
           )
 
+# For some mysqlclient works but for others mariadbclient works.
+# Need to find out about dependencies
+
 find_library(MARIADB_LIBRARIES NAMES mariadbclient
             PATHS
             /usr/lib/mysql
